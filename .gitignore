@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.selenium/
+chrome-profile-*/
+pytest-run.log
+pytest-latest.log
+LOCAL_NOTES.md
