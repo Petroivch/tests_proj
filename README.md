@@ -17,12 +17,13 @@
 
 На каждый дефект добавлен отдельный автотест.
 
-## Запуск автотестов (Git Bash)
+## Запуск автотестов
 
 ```bash
 python -m venv .venv
-./.venv/Scripts/python.exe -m pip install -r requirements.txt
-./.venv/Scripts/python.exe -m pytest -v
+.venv\Scripts\activate
+python -m pip install -r requirements.txt
+python -m pytest tests/ -v
 ```
 
 Ожидаемый результат прогона:
