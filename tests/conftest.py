@@ -84,7 +84,8 @@ def _resolve_chrome_driver(chrome_binary: str | None) -> tuple[str, str | None]:
     if chrome_binary:
         command.extend(["--browser-path", chrome_binary])
 
-    completed = subprocess.run(command, capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
+    creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    completed = subprocess.run(command, capture_output=True, text=True, creationflags=creation_flags)
     if completed.returncode != 0:
         raise RuntimeError(
             "Selenium Manager failed to resolve Chrome driver.\n"
